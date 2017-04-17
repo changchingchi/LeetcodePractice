@@ -1,4 +1,5 @@
 public class Solution {
+
     public List<Integer> getRow(int rowIndex) {
         List<Integer> result = new ArrayList<Integer>();
         List<Integer> temp;
@@ -85,5 +86,11 @@ public class Solution {
         }
            
         return S.reverse().toString();
+    }
+     public int maxDepth(TreeNode root) {
+        if(root==null) return 0;
+        int l = maxDepth(root.left);
+        int r = maxDepth(root.right);
+        return Math.max(l,r)+1;
     }
 }

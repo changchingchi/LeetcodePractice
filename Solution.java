@@ -94,3 +94,24 @@ public class Solution {
         return Math.max(l,r)+1;
     }
 }
+    
+    public ListNode removeElements(ListNode head, int val) {
+        if(head==null) return head;
+        //we need a dummy Node for this 
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode ptr = dummy;
+        while(ptr.next!=null){
+            //we will loop thru all the node
+            if(ptr.next.val==val){
+                //remove it.
+                ptr.next = ptr.next.next;
+            }else{
+                //update ptr.
+                ptr = ptr.next;
+            }
+        }
+        return dummy.next;
+        
+    }
+}
